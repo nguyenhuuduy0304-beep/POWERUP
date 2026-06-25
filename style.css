@@ -1,0 +1,65 @@
+/* ===== Base ===== */
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+
+/* ===== Hero Background ===== */
+.hero-bg {
+    background: linear-gradient(rgba(4, 120, 87, 0.8), rgba(6, 78, 59, 0.9)),
+        url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop') center/cover;
+}
+
+/* ===== Glass Panel ===== */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #047857; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #064E3B; }
+
+/* ===== Animations ===== */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* ===== Green Shadow on Hover ===== */
+.hover-shadow-green:hover {
+    box-shadow: 0 20px 25px -5px rgba(4, 120, 87, 0.3), 0 10px 10px -5px rgba(4, 120, 87, 0.2);
+}
+
+/* ===== Hero Title - Một dòng, chỉ xuống dòng khi viewport nhỏ ===== */
+.hero-title {
+    text-transform: uppercase;
+    white-space: nowrap;          /* Giữ trên 1 dòng khi đủ rộng */
+    font-size: clamp(1.2rem, 3.5vw, 4.5rem); /* Co chữ theo viewport */
+    line-height: 1.4;
+}
+
+/* Cho phép xuống dòng khi viewport nhỏ */
+@media (max-width: 900px) {
+    .hero-title {
+        white-space: normal;
+        font-size: clamp(1.6rem, 5vw, 3rem);
+    }
+}

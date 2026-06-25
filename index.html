@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerUp Startup - Năng Lượng Tái Tạo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { light: '#4ade80', DEFAULT: '#047857', dark: '#064E3B' },
+                        sun: { DEFAULT: '#F59E0B', dark: '#D97706' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer gap-2" onclick="window.scrollTo(0,0)">
+                    <img src="Logo.JPG" alt="PowerUp Logo" class="h-16 w-16 object-contain drop-shadow-md">
+                    <span class="text-xl font-bold text-brand-dark hidden sm:block">PowerUp</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#ve-chung-toi" class="text-gray-600 hover:text-brand font-medium transition">Về chúng tôi</a>
+                    <a href="#san-pham" class="text-gray-600 hover:text-brand font-medium transition">Giải pháp</a>
+                    <a href="#cong-nghe" class="text-gray-600 hover:text-brand font-medium transition">Công nghệ</a>
+                    <a href="#lien-he" class="bg-brand text-white px-6 py-2.5 rounded-full font-semibold hover:bg-brand-dark transition shadow-lg shadow-brand/30">
+                        Nhận báo giá
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand focus:outline-none text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#ve-chung-toi" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-lg">Về chúng tôi</a>
+                <a href="#san-pham" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-lg">Giải pháp</a>
+                <a href="#cong-nghe" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-lg">Công nghệ</a>
+                <a href="#lien-he" class="block text-center mt-4 bg-brand text-white px-6 py-3 rounded-xl font-semibold">Nhận báo giá</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center relative overflow-hidden" id="trang-chu">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-28 pb-20">
+            <div class="max-w-full">
+                <span class="inline-block py-1.5 px-4 rounded-full bg-white/20 text-white font-semibold text-sm mb-6 border border-white/30 backdrop-blur-sm fade-in-up">
+                    <i class="fa-solid fa-bolt text-sun mr-2"></i> Giải pháp thích ứng khi điện tăng giá
+                </span>
+                <h1 class="hero-title font-extrabold text-white mb-6 fade-in-left">
+                    BẬT NGUỒN NĂNG LƯỢNG XANH<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-sun to-yellow-200">NÂNG TẦM MÁI NHÀ VIỆT</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed max-w-2xl">
+                    PowerUp Startup cung cấp giải pháp điện mặt trời "Chìa khóa trao tay". Tiết kiệm tối đa hóa đơn tiền điện, tự chủ năng lượng 24/7 với hệ thống Hybrid thông minh, an toàn tuyệt đối.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#lien-he" class="bg-sun text-brand-dark px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-yellow-400 transition shadow-xl flex items-center justify-center gap-2">
+                        Đăng ký tư vấn ngay <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#san-pham" class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-white/20 transition flex items-center justify-center gap-2">
+                        Tìm hiểu giải pháp
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative bottom curve -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none transform translate-y-1">
+            <svg class="relative block w-full h-[50px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.98,130.12,201.3,120,241.6,114.24,281.44,97.71,321.39,56.44Z" fill="#f9fafb"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Values -->
+    <section class="py-20 bg-gray-50" id="ve-chung-toi">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-sm font-bold text-brand uppercase tracking-wider mb-2">Giá trị cốt lõi (H-A-N-B)</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900">Giải quyết triệt để nỗi đau năng lượng</h3>
+                <div class="w-24 h-1 bg-sun mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-shadow-green transition duration-300 border border-gray-100 fade-in-up">
+                    <div class="w-14 h-14 bg-green-100 text-brand rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Hiệu suất tối ưu</h4>
+                    <p class="text-gray-600">Sử dụng tấm pin thế hệ mới N-type (công nghệ TopCon) đạt chuẩn Tier 1 toàn cầu, tối đa hóa sản lượng điện.</p>
+                </div>
+                <!-- Value 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-shadow-green transition duration-300 border border-gray-100 fade-in-up delay-100">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">An toàn tuyệt đối</h4>
+                    <p class="text-gray-600">Khảo sát 3D tải trọng mái. Thiết bị tủ điện chuẩn công nghiệp, chống sét lan truyền và phòng chống cháy nổ.</p>
+                </div>
+                <!-- Value 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-shadow-green transition duration-300 border border-gray-100 fade-in-up delay-200">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-house-circle-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Nghệ thuật công trình</h4>
+                    <p class="text-gray-600">Thiết kế hệ giàn khung thẩm mỹ, xử lý chống thấm triệt để, nâng tầm cảnh quan ngôi nhà của bạn.</p>
+                </div>
+                <!-- Value 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-shadow-green transition duration-300 border border-gray-100 fade-in-up delay-300">
+                    <div class="w-14 h-14 bg-sun/20 text-sun-dark rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Đồng hành bền vững</h4>
+                    <p class="text-gray-600">Hệ sinh thái PowerCare: Vệ sinh tấm pin bằng robot định kỳ miễn phí 2 năm đầu, duy trì hiệu suất 25 năm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Products Section -->
+    <section class="py-20 bg-white" id="san-pham">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-sm font-bold text-brand uppercase tracking-wider mb-2">Sản phẩm chiến lược</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900">Giải pháp "Chìa khóa trao tay"</h3>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Từ khảo sát 3D đến bảo dưỡng định kỳ, PowerUp cung cấp quy trình trọn gói mang lại sự an tâm tuyệt đối.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <!-- Product 1: Hybrid -->
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col relative group fade-in-up">
+                    <div class="absolute top-4 right-4 bg-sun text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
+                        Trọng tâm chiến lược
+                    </div>
+                    <div class="h-56 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop" alt="Hệ thống Hybrid" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col bg-white">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-2">Hệ thống Hybrid</h4>
+                        <p class="text-brand font-semibold mb-4">Tự chủ năng lượng 24/7</p>
+                        <p class="text-gray-600 mb-6 flex-1">Giải pháp hoàn hảo cho Hộ gia đình tiêu thụ >2tr/tháng. Tự động lưu điện vào pin Lithium (LiFePO4) dùng ban đêm và dự phòng mất điện.</p>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i> Pin Tier 1 (Longi, Jinko)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i> Inverter Hybrid tích hợp</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i> Pin lưu trữ Lithium-ion an toàn</li>
+                        </ul>
+                        <a href="#lien-he" class="w-full block text-center bg-gray-50 hover:bg-brand hover:text-white text-brand border border-brand font-bold py-3 rounded-xl transition duration-300">
+                            Nhận Báo Giá
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: On-grid -->
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col group fade-in-up delay-100">
+                    <div class="h-56 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2069&auto=format&fit=crop" alt="Hệ thống Hòa lưới" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col bg-white">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-2">Hệ thống Hòa Lưới</h4>
+                        <p class="text-blue-600 font-semibold mb-4">Tối ưu cho Doanh nghiệp (SMEs)</p>
+                        <p class="text-gray-600 mb-6 flex-1">Dành cho nhà xưởng mini, quán cafe tiêu thụ cực lớn vào ban ngày. Cắt giảm trực tiếp hóa đơn tiền điện ở khung giờ cao điểm.</p>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Chi phí đầu tư ban đầu tốt nhất</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Thời gian hoàn vốn nhanh</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-500"></i> Đạt chuẩn ESG / Xưởng xanh</li>
+                        </ul>
+                        <a href="#lien-he" class="w-full block text-center bg-gray-50 hover:bg-blue-600 hover:border-blue-600 hover:text-white text-blue-600 border border-blue-600 font-bold py-3 rounded-xl transition duration-300">
+                            Nhận Báo Giá
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3: PowerCare -->
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col bg-gradient-to-br from-brand-dark to-gray-900 text-white group fade-in-up delay-200">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-3xl text-sun mb-6">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Gói PowerCare</h4>
+                        <p class="text-brand-light font-semibold mb-4">Bảo dưỡng Độc quyền</p>
+                        <p class="text-gray-300 mb-6 flex-1">Sự khác biệt của PowerUp: Không bỏ rơi khách hàng. Định kỳ 6 tháng vệ sinh bằng robot và camera nhiệt đo kiểm an toàn.</p>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-sun"></i> Miễn phí 2 năm đầu tiên</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-broom text-sun"></i> Robot vệ sinh chuyên dụng</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-camera text-sun"></i> Camera nhiệt phòng cháy nổ</li>
+                        </ul>
+                        <a href="#lien-he" class="w-full block text-center bg-sun text-brand-dark font-bold py-3 rounded-xl hover:bg-yellow-400 transition duration-300 shadow-lg">
+                            Đăng ký trải nghiệm
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology & Process -->
+    <section class="py-20 bg-gray-50 border-t border-gray-200" id="cong-nghe">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop" alt="Công nghệ IoT giám sát" class="rounded-2xl shadow-2xl relative z-10 border border-gray-200">
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-brand/20 rounded-full blur-3xl z-0"></div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -left-6 md:-left-12 top-1/2 -translate-y-1/2 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-brand text-xl">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-medium">PowerUp Smart App</p>
+                            <p class="text-sm font-bold text-gray-900">Giám sát Real-time IoT</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 fade-in-up delay-100">
+                    <h2 class="text-sm font-bold text-brand uppercase tracking-wider mb-2">Năng lực công nghệ cốt lõi</h2>
+                    <h3 class="text-3xl font-extrabold text-gray-900 mb-6">Chuyển đổi số mái nhà của bạn</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Loại bỏ hoàn toàn rủi ro từ "thợ tay ngang". Khối kỹ thuật PowerUp áp dụng công nghệ số hóa vào từng khâu thi công.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-full shadow border border-gray-100 flex items-center justify-center text-brand text-lg font-bold">
+                                1
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">Mô phỏng 3D trước thi công</h4>
+                                <p class="text-gray-600 mt-1 text-sm">Quét flycam, dùng phần mềm PVsyst, AutoCAD phân tích bóng đổ và bản đồ bức xạ chính xác.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-full shadow border border-gray-100 flex items-center justify-center text-brand text-lg font-bold">
+                                2
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">Nền tảng Cloud Monitor</h4>
+                                <p class="text-gray-600 mt-1 text-sm">Kết nối máy chủ đám mây, cho phép khách hàng theo dõi trực quan số tiền tiết kiệm trên điện thoại.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-full shadow border border-gray-100 flex items-center justify-center text-brand text-lg font-bold">
+                                3
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">Quản trị rủi ro AI</h4>
+                                <p class="text-gray-600 mt-1 text-sm">Dùng camera nhiệt đo điểm nóng (hotspot), tự động phân tích thời tiết để tối ưu sạc/xả pin lưu trữ.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Form Section -->
+    <section class="py-20 relative bg-brand-dark" id="lien-he">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row fade-in-up">
+                
+                <!-- Contact Info -->
+                <div class="lg:w-2/5 bg-gray-900 p-10 lg:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-brand rounded-full blur-[80px] opacity-40"></div>
+
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-2">Bắt đầu ngay hôm nay</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">Hãy để PowerUp đồng hành cùng bạn trên con đường hướng tới Net Zero 2050 và cắt giảm tối đa chi phí năng lượng.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4 hover:bg-white/5 p-2 rounded-lg transition">
+                                <i class="fa-solid fa-location-dot mt-1 text-brand-light text-xl w-6"></i>
+                                <div>
+                                    <h5 class="font-semibold text-gray-200">Trụ sở chính</h5>
+                                    <p class="text-gray-400 text-sm mt-1">Số 504 Đại lộ Bình Dương, Phường Phú Lợi, TP. Hồ Chí Minh</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 hover:bg-white/5 p-2 rounded-lg transition">
+                                <i class="fa-solid fa-phone mt-1 text-brand-light text-xl w-6"></i>
+                                <div>
+                                    <h5 class="font-semibold text-gray-200">Hotline Giám đốc (CEO)</h5>
+                                    <p class="text-gray-400 text-sm mt-1">0359.806.411 (Mr. Khôi Nguyên)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 hover:bg-white/5 p-2 rounded-lg transition">
+                                <i class="fa-solid fa-envelope mt-1 text-brand-light text-xl w-6"></i>
+                                <div>
+                                    <h5 class="font-semibold text-gray-200">Email</h5>
+                                    <p class="text-gray-400 text-sm mt-1">khoinguyen02102006@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 relative z-10 border-t border-gray-700 pt-6">
+                        <p class="text-sm text-gray-400 font-medium mb-4">Đối tác & Pháp lý minh bạch:</p>
+                        <div class="flex items-center gap-5 text-2xl text-gray-500">
+                            <i class="fa-solid fa-building-columns hover:text-white cursor-pointer transition" title="Bảo lãnh bởi Techcombank"></i>
+                            <i class="fa-brands fa-google hover:text-white cursor-pointer transition" title="Hạ tầng Cloud"></i>
+                            <i class="fa-solid fa-file-contract hover:text-white cursor-pointer transition" title="Giấy chứng nhận Đăng ký Doanh nghiệp"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="lg:w-3/5 p-10 lg:p-12 bg-white">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Đăng ký nhận mô phỏng 3D miễn phí</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Họ và tên *</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-gray-50 rounded-lg border border-gray-200 focus:bg-white focus:ring-2 focus:ring-brand focus:border-brand transition outline-none" placeholder="Nhập họ tên của bạn">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Số điện thoại *</label>
+                                <input type="tel" required class="w-full px-4 py-3 bg-gray-50 rounded-lg border border-gray-200 focus:bg-white focus:ring-2 focus:ring-brand focus:border-brand transition outline-none" placeholder="Nhập số điện thoại">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Loại hình công trình *</label>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                <label class="border border-gray-200 rounded-lg p-3 text-sm flex items-center gap-2 cursor-pointer hover:border-brand transition has-[:checked]:border-brand has-[:checked]:bg-green-50">
+                                    <input type="radio" name="type" value="HoGiaDinh" class="text-brand focus:ring-brand accent-brand" checked>
+                                    Hộ gia đình
+                                </label>
+                                <label class="border border-gray-200 rounded-lg p-3 text-sm flex items-center gap-2 cursor-pointer hover:border-brand transition has-[:checked]:border-brand has-[:checked]:bg-green-50">
+                                    <input type="radio" name="type" value="DoanhNghiep" class="text-brand focus:ring-brand accent-brand">
+                                    Doanh nghiệp/SME
+                                </label>
+                                <label class="border border-gray-200 rounded-lg p-3 text-sm flex items-center gap-2 cursor-pointer hover:border-brand transition has-[:checked]:border-brand has-[:checked]:bg-green-50">
+                                    <input type="radio" name="type" value="Khac" class="text-brand focus:ring-brand accent-brand">
+                                    Khác
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Hóa đơn điện trung bình/tháng</label>
+                            <select class="w-full px-4 py-3 bg-gray-50 rounded-lg border border-gray-200 focus:bg-white focus:ring-2 focus:ring-brand focus:border-brand transition outline-none">
+                                <option>Dưới 2 triệu</option>
+                                <option>Từ 2 - 5 triệu</option>
+                                <option>Từ 5 - 10 triệu</option>
+                                <option>Trên 10 triệu</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand text-white font-bold text-lg py-4 rounded-xl hover:bg-brand-dark transition shadow-lg shadow-brand/30 flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                            Gửi Yêu Cầu Tư Vấn <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <p class="text-xs text-gray-500 text-center mt-4"><i class="fa-solid fa-lock mr-1"></i> Thông tin của bạn được bảo mật tuyệt đối. Đội ngũ kỹ sư sẽ liên hệ trong 24h.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8 pb-8 border-b border-gray-800">
+                <!-- Logo in Footer -->
+                <div class="flex items-center gap-3 text-2xl font-bold text-white">
+                    <img src="Logo.JPG" alt="PowerUp Logo" class="h-12 w-12 bg-white rounded-xl p-1 object-contain">
+                    <span>Power<span class="text-sun">Up</span></span>
+                </div>
+                
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-4">
+                <div>
+                    <p class="mb-2 text-white font-medium">© 2026 CÔNG TY CỔ PHẦN NĂNG LƯỢNG TÁI TẠO POWERUP STARTUP RE JSC.</p>
+                    <p class="text-sm text-gray-500">Mã số doanh nghiệp: 0319999999 - Cấp ngày: 06/06/2026</p>
+                </div>
+                <div class="text-sm text-gray-500 max-w-lg md:text-right">
+                    <p class="mb-1 text-gray-400">Đội ngũ sáng lập (8 Founders):</p>
+                    <p>Khôi Nguyên (CEO) • Đức Trí (CTO) • Trà My (CCO) • Hồng Hạnh (CFO)</p>
+                    <p>Gia Bảo • Xuân Minh • Hữu Duy • Thúy Vy</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
+            <div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center text-brand text-4xl mx-auto mb-6">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Đăng ký thành công!</h3>
+            <p class="text-center text-gray-600 mb-8 leading-relaxed">Cảm ơn bạn đã tin tưởng. Đội ngũ kỹ sư của PowerUp sẽ sớm liên hệ để tư vấn giải pháp tốt nhất.</p>
+            <button onclick="closeModal()" class="w-full bg-brand text-white font-bold py-3.5 rounded-xl hover:bg-brand-dark transition shadow-md">
+                Đóng thông báo
+            </button>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
